@@ -1,0 +1,10 @@
+insert into products (id, name, price, quantity,category) values (1, 'Yotz', 919, 36, 'Category 1');
+insert into products (id, name, price, quantity,category) values (2, 'Wordpedia', 992, 63, 'Category 1');
+insert into products (id, name, price, quantity,category) values (3, 'Eire', 515, 86, 'Category 1');
+insert into products (id, name, price, quantity,category) values (4, 'Photobug', 939, 37,'Category 2');
+insert into products (id, name, price, quantity,category) values (5, 'Kazio', 458, 83, 'Category 2');
+insert into products (id, name, price, quantity,category) values (6, 'Blogtags', 994, 43, 'Category 2');
+insert into products (id, name, price, quantity,category) values (7, 'Eabox', 759, 70, 'Category 3');
+insert into products (id, name, price, quantity,category) values (8, 'Meevee', 379, 100, 'Category 3');
+insert into products (id, name, price, quantity,category) values (9, 'Oyope', 477, 95, 'Category 3');
+insert into products (id, name, price, quantity,category) values (10, 'Demizz', 819, 70, 'Category 1');
