@@ -1,0 +1,62 @@
+<div class="container mx-auto">
+    <section *ngIf="cart.length > 0; else NoProducts ">
+        <p class="text-2xl p-5">Cart</p>
+
+
+        <div class="overflow-x-auto">
+            <table class="table w-full">
+                <thead id="my-table">
+                    <tr>
+                        <th></th>
+                        <th>name</th>
+                        <th>price</th>
+                        <!--<th>quantity</th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of cart">
+                        <th>
+                            <button class="btn btn-danger" (click)="removeProduct(c)">Remove</button>
+                        </th>
+                        <th>{{c.name}}</th>
+                        <th>{{c.price | currency: 'CLP': 'symbol-narrow': '1.0-0'}}</th>
+                     <!--   <th>{{c.quantity}}</th> -->
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>
+                            
+                                <label>
+                                    <input type="text" placeholder="Credit card number" name="cardNumber"  [(ngModel)]="cardNumber" class="input w-full max-w-xs" />                                  
+                                </label>
+                            
+                        </th>
+                        <th></th>
+                        <th><b>Total:</b>{{totalAmount | currency: 'CLP': 'symbol-narrow': '1.0-0'}}</th>
+                        <th>
+                            <button class="btn btn-primary" (click)="saveSales()">Save</button>
+                        </th>
+
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+
+<ng-template #NoProducts>
+
+
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <h1 class="text-5xl font-bold">UPS!</h1>
+                <p class="py-6">0 Products in Cart</p>
+                <button class="btn btn-primary" (click)="goToProducts()">Products</button>
+            </div>
+        </div>
+    </div>
+</ng-template>

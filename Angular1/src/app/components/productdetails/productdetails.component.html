@@ -1,0 +1,26 @@
+<div class="container mx-auto">
+
+    <button class="btn btn-primary m-5" (click)="backToProducts()">
+        <b>Back</b>
+    </button>
+
+    <div class="card w-96 bg-base-100 shadow-xl">
+        <figure><img src="https://dummyimage.com/600x400/000/fff&text={{product.name}}" alt="Shoes" /></figure>
+        <div class="card-body">
+            <h2 class="card-title">#{{product.id}} | {{product.name}}</h2>
+            <p>price : {{product.price | currency: 'CLP': 'symbol-narrow': '1.0-0'}}</p>
+            <p>quantity : {{product.quantity}}</p>
+            <p>category : {{product.category}}</p>
+            <div class="card-actions justify-end">
+
+                <!-- <span class="btn btn-primary gap-2">
+                    Add
+                    <div class="badge">{{product.quantity}}</div>
+                </span> -->
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

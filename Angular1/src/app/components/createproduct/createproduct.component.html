@@ -1,0 +1,113 @@
+<div class="container mx-auto">
+    <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+
+        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-12">
+
+            <div class="sm:col-span-6">
+                <div class="mt-2">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Nombre servicio</span>
+                            <span class="label-text-alt"></span>
+                        </label>
+                        <input type="text" placeholder="Nombre" required class="input input-bordered w-full" id="name"
+                            name="name" [(ngModel)]="product.name" minlength="4" maxlength="20" #name="ngModel" />
+                        <label class="label" *ngIf="name.invalid && ( name.dirty  || name.touched)">
+                            <span class="label-text-alt text-error" *ngIf="name.errors?.['required']">
+                                Escribe nombre del servicio
+                            </span>
+                            <span class="label-text-alt text-error" *ngIf="name.errors?.['minlength']">
+                                Minimum lengh is 4
+                            </span>
+                            <span class="label-text-alt text-error" *ngIf="name.errors?.['maxlength']">
+                                Minimum lengh is 20
+                            </span>
+                            <span class="label-text-alt"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="sm:col-span-3">
+                <div class="mt-2">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Precio</span>
+                            <span class="label-text-alt"></span>
+                        </label>
+                        <input type="number" placeholder="Precio" required class="input input-bordered w-full" id="price"
+                            name="price" [(ngModel)]="product.price" min="1" #price="ngModel" />
+                        <label class="label" *ngIf="price.invalid && ( price.dirty  || price.touched)">
+                            <span class="label-text-alt text-error" *ngIf="price.errors?.['required']">
+                                Write a price for product
+                            </span>
+                            <span class="label-text-alt text-error" *ngIf="price.errors?.['min']">
+                                Minimum price is 1
+                            </span>
+                            <span class="label-text-alt"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="sm:col-span-3">
+                <div class="mt-2">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Cantidad</span>
+                            <span class="label-text-alt"></span>
+                        </label>
+                        <input type="number" placeholder="Cantidad" required class="input input-bordered w-full"
+                            id="quantity" name="quantity" [(ngModel)]="product.quantity" min="0 " #quantity="ngModel" />
+                        <label class="label" *ngIf="quantity.invalid && ( quantity.dirty  || quantity.touched)">
+                            <span class="label-text-alt text-error" *ngIf="quantity.errors?.['required']">
+                                Write a quantity for product
+                            </span>
+                            <span class="label-text-alt text-error" *ngIf="quantity.errors?.['min']">
+                                Minimum stock is 1
+                            </span>
+                            <span class="label-text-alt"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="sm:col-span-3">
+                <div class="mt-2">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Categoria</span>
+                            <!-- <span class="label-text-alt">Alt label</span> -->
+                        </label>
+                        <select class="select select-bordered" required id="category" name="category"
+                            [(ngModel)]="product.category" #category="ngModel">
+                            <option disabled selected>Escoge un servicio</option>
+                            <option>Limpieza</option>
+                            <option>Mantencion</option>
+                        </select>
+                        <label class="label" *ngIf="quantity.invalid && ( quantity.dirty  || quantity.touched)">
+                            <span class="label-text-alt text-error" *ngIf="quantity.errors?.['required']">
+                                Select a category
+                            </span>
+                            <span class="label-text-alt text-error" *ngIf="quantity.errors?.['min']">
+                                Minimum stock is 1
+                            </span>
+                            <span class="label-text-alt"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="flex items-center justify-end">
+            <div class="mt-2">
+                <div class="form-control w-full max-w-xs">
+                    <button class="btn btn-primary" [disabled]="!productForm.form.valid">Agendar</button>
+                    <label class="label">
+                        <span class="label-text-alt"></span>
+                        <span class="label-text-alt"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

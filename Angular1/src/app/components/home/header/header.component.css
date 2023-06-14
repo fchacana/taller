@@ -1,0 +1,9 @@
+header {
+    background-color: blue;
+    color: white;
+    /* Agrega cualquier otro estilo que desees para el encabezado */
+  }
+.img-nav {
+    width: 100px;
+    height: 100px;
+}

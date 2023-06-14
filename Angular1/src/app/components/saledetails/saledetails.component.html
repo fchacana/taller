@@ -1,0 +1,36 @@
+<div class="container mx-auto">
+    <button class="btn btn-primary" (click)="openPDF()">PDF</button>
+    <div class="" id="htmlData">
+        <p class="text-2xl m-9 text-black">Sale #<b> {{sale.id}}</b></p>
+        <div class="overflow-x-auto">
+            <table class="table w-full rounded-none">
+                <!-- head -->
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- row 1 -->
+
+                    <!-- row 3 -->
+                    <tr *ngFor="let s of sale.listProducts">
+                        <td>{{s.id}}</td>
+                        <td>{{s.name}}</td>
+                        <th>{{s.price | currency: 'CLP': 'symbol-narrow': '1.0-0'}}</th>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+
+                        <th><b>ID USER: </b>{{sale.user}}</th>
+                        <th>Total: </th>
+                        <th>{{sale.total | currency: 'CLP': 'symbol-narrow': '1.0-0'}}</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
